@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>S-18 Prototype AI</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#22c55e" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #d1fae5, #a7f3d0);
+    }
+    .glass {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(15px);
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-6">
+  <div class="glass shadow-2xl p-10 rounded-2xl max-w-3xl w-full border border-green-300">
+    <h1 class="text-4xl font-extrabold text-center text-green-900 mb-2 drop-shadow-md">🌿 S-18 Prototype AI</h1>
+    <p class="text-center text-gray-700 mb-8 text-lg">Monitor & Optimize Your Smart Hydroponic Farm</p>
+    <form id="farmDataForm" class="space-y-6">
+      <div class="bg-white/70 p-6 rounded-xl border border-blue-300 shadow-lg">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-4">🔧 Sensor Data</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1 font-medium">Humidity (%)</label>
+            <input type="number" id="overall_humidity" class="w-full p-2 rounded-lg border focus:ring-2 focus:ring-blue-300" required />
+          </div>
+          <div>
+            <label class="block mb-1 font-medium">Temperature (°C)</label>
+            <input type="number" id="overall_temperature" class="w-full p-2 rounded-lg border focus:ring-2 focus:ring-blue-300" required />
+          </div>
+          <div>
+            <label class="block mb-1 font-medium">Water Level (%)</label>
+            <input type="number" id="overall_water_level" class="w-full p-2 rounded-lg border focus:ring-2 focus:ring-blue-300" required />
+          </div>
+          <div>
+            <label class="block mb-1 font-medium">Nutrients (ml)</label>
+            <input type="number" id="overall_nutrients_ml" class="w-full p-2 rounded-lg border focus:ring-2 focus:ring-blue-300" required />
+          </div>
+        </div>
+        <label class="block mt-4 mb-1 font-medium">Nutrient Type</label>
+        <input type="text" id="overall_nutrient_type" class="w-full p-2 rounded-lg border focus:ring-2 focus:ring-green-400" placeholder="e.g., FloraGro" required />
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-green-100/50 p-5 rounded-xl border border-green-300">
+          <h3 class="text-xl font-semibold text-green-800 mb-3">🌱 Floor 1 Plants</h3>
+          <input type="text" id="floor1_plant_types" class="w-full p-2 rounded-lg border focus:ring-2 focus:ring-green-300" placeholder="e.g., lettuce,basil" required />
+        </div>
+        <div class="bg-green-100/50 p-5 rounded-xl border border-green-300">
+          <h3 class="text-xl font-semibold text-green-800 mb-3">🌼 Floor 2 Plants</h3>
+          <input type="text" id="floor2_plant_types" class="w-full p-2 rounded-lg border focus:ring-2 focus:ring-green-300" placeholder="e.g., tomato" required />
+        </div>
+      </div>
+      <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white text-lg font-bold py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200">🚀 Get Assessment</button>
+    </form>
+  </div>
+</body>
+</html>
